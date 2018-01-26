@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>为爱心 | 爱心厨房</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- FooTable -->
+    <link href="css/plugins/footable/footable.core.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <!--加载导航条-->
+        <div class='sidebar-collapse' id='love_kichen_navbar'>
+        </div>
+    </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+            <!--加载页眉-->
+            <div class="row border-bottom" id='love_kichen_topbar'>            
+            </div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>菜品管理</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="index.html">首页</a>
+                        </li>
+                        <li>
+                            <a>爱心厨房</a>
+                        </li>
+                        <li class="active">
+                            <strong>菜品管理</strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2">
+
+                </div>
+            </div>
+
+        <div class="wrapper wrapper-content animated fadeInRight ecommerce">
+
+
+            <div class="ibox-content m-b-sm border-bottom">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="control-label" for="product_name">菜品名称</label>
+                            <input type="text" id="product_name" name="product_name" value="" placeholder="菜品名称" class="form-control">
+                        </div>
+                    </div>                    
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="control-label" for="status">状态</label>
+                            <select name="status" id="status" class="form-control">
+                                <option value="1" selected>活动</option>
+                                <option value="0">关闭</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox">
+                        <div class="ibox-content">
+
+                            <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="15">
+                                <thead>
+                                <tr>
+                                    <th class="id">id</th>
+                                    <th data-toggle="true">菜品名称</th>
+                                    <th data-hide="all">描述</th>
+                                    <th data-hide="phone">创建人</th>
+                                    <th data-hide="phone" >创建时间</th>
+                                    <th data-hide="phone">状态</th>
+                                    <th class="text-right" data-sort-ignore="true">操作</th>
+
+                                </tr>
+                                </thead>
+                                <tbody id="love_kitchen_list_tbody">
+                                
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td colspan="6">
+                                        <ul class="pagination pull-right"></ul>
+                                    </td>
+                                </tr>
+                                </tfoot>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!--加载页脚-->
+        <div class="footer" id="love_kichen_footer">            
+        </div>
+
+        </div>
+        </div>
+
+
+    
+    <!-- Mainly scripts -->
+    <script src="js/jquery-2.1.1.js"></script>
+    
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="common_html/love_kitchen_bar.js"></script>
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- FooTable -->
+    <script src="js/plugins/footable/footable.all.min.js"></script>
+    <script src="src/js/love_kitchen/love_kitchen_list.js"></script>
+
+    <!-- Page-Level Scripts -->
+    <script>
+       
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>为爱心 | 爱心互联</title>
+    <script src="js/jquery-2.1.1.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/bootstrap.min.js"></script>
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+    <!-- <link href="css/animate.css" rel="stylesheet"> -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/plugins/summernote/summernote.css" rel="stylesheet">
+    <link href="css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
+    <script src="js/plugins/summernote/summernote.min.js"></script>
+    
+    
+    <link href="src/css/wax_net/wax_wechat.css" rel="stylesheet">
+    <script src="js/sockjs.min.js"></script>
+    <script src="js/stomp.js"></script>
+    
+</head>
+
+<body>
+    <div id = "myself"/>
+    <div id="wrapper">
+
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <!--加载导航条-->
+        <div class='sidebar-collapse' id='love_kichen_navbar'>
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg">
+        <!--加载页眉-->
+        <div class="row border-bottom" id='love_kichen_topbar'>            
+        </div>
+
+        <div class="wrapper wrapper-content">
+            <!--人员侧边栏-->
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-content mailbox-content">
+                            <div class="file-manager">
+                                <a class="btn btn-block btn-primary compose-mail" href="#" onclick="connect(this)">点击连接</a>
+                                <div class="space-25"></div>
+                                <h5>在线人员</h5>
+                                <ul class="category-list" style="padding: 0" id='wax_wechat_online'>
+                                </ul>
+
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--聊天主体-->
+                <div class="col-lg-9 animated fadeInRight" id="wax_wechat_body">
+                    <div class="mail-box">
+
+                        <!--显示区-->
+                        <div class="mail-body" id="wax_wechat_show"> 
+                        </div>
+                        <!--输入区-->
+                        <div class="mail-text h-200" id="wax_wechat_raw_input">
+
+                            <div class="summernote" id='summernote'>
+
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="mail-body text-right tooltip-demo">
+                            <a href="#" class="btn btn-sm btn-primary wax_wechat_sendBt" data-toggle="tooltip" data-placement="top" title="Send" id='wax_wechat_send'><i class="fa fa-reply"></i> 发送</a>
+                            <a href="#" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Discard email" onclick="clearName()"><i class="fa fa-times"></i> 清空</a>
+                        </div>
+                        <div class="clearfix"></div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--加载页脚-->
+        <div class="footer" id="love_kichen_footer">            
+        </div>
+
+        </div>
+        </div>
+
+    <!-- Mainly scripts -->
+    
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="common_html/love_kitchen_bar.js"></script>
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- iCheck -->
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
+
+    <!-- SUMMERNOTE -->
+    
+    <script src="js/plugins/summernote/summernote-zh-CN.js"></script>
+    <script src="src/js/wax_net/wax_wechat.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+#wax_wechat_raw_input{
+	height: 50px;
+}
+#wax_wechat_show{
+	height: 250px;
+	overflow-y:scroll;
+}
+.alert{
+	width: 50%;
+}
+.alert-success{
+	margin: 0 0 1% 50%;
+}
+/*.modal-backdrop.in{
+	opacity:0;
+}*/
+.wax_wechat_upload_text{
+	color: #FF0000;
+}

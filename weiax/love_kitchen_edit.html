@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>为爱心 | 爱心厨房</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="css/plugins/summernote/summernote.css" rel="stylesheet">
+    <link href="css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
+
+    <link href="css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+    <link href="src/css/love_kitchen/love_kitchen_edit.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <!--加载导航条-->
+        <div class='sidebar-collapse' id='love_kichen_navbar'>
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg">
+        <!--加载页眉-->
+        <div class="row border-bottom" id='love_kichen_topbar'>            
+        </div>
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-10">
+                <h2>菜品编辑</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="index.html">首页</a>
+                    </li>
+                    <li>
+                        <a>爱心厨房</a>
+                    </li>
+                    <li class="active">
+                        <strong>菜品编辑</strong>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="wrapper wrapper-content animated fadeInRight ecommerce">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="tabs-container">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a data-toggle="tab" href="#tab-1">菜品信息</a></li>
+                                <li class=""><a data-toggle="tab" href="#tab-2"> 数据</a></li>
+                                <li class=""><a data-toggle="tab" href="#tab-4"> 图片</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="tab-1" class="tab-pane active">
+                                    <div class="panel-body">
+
+                                        <fieldset class="form-horizontal">
+                                            <div class="form-group"><label class="col-sm-2 control-label">名称:</label>
+                                                <input id="id" type="text" style="display: none;">
+                                                <div class="col-sm-10"><input id="menuName" type="text" class="form-control" placeholder="菜品名称"></div>
+                                            </div>                                            
+                                            <div class="form-group"><label class="col-sm-2 control-label">描述:</label>
+                                                <div class="col-sm-10">
+                                                    <div class="summernote" id="description">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group"><label class="col-sm-2 control-label">便签:</label>
+                                                <div class="col-sm-10"><input id="note" type="text" class="form-control" placeholder="..."></div>
+                                            </div>
+                                        </fieldset>
+
+                                    </div>
+                                </div>
+                                <div id="tab-2" class="tab-pane">
+                                    <div class="panel-body">
+
+                                        <fieldset class="form-horizontal">
+                                            <!--<div class="form-group"><label class="col-sm-2 control-label">ID:</label>
+                                                <div class="col-sm-10"><input type="text" class="form-control" placeholder="543"></div>
+                                            </div>-->                                            
+                                            <div class="form-group"><label class="col-sm-2 control-label">排列序号:</label>
+                                                <div class="col-sm-10"><input id="menuOrder" type="text" class="form-control" placeholder="0"></div>
+                                            </div>
+                                            <div class="form-group"><label class="col-sm-2 control-label">状态:</label>
+                                                <div class="col-sm-10">
+                                                    <select class="form-control" id="status">
+                                                        <option value="1">活动</option>
+                                                        <option value="0">关闭</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+
+
+                                    </div>
+                                </div>                                
+                                <div id="tab-4" class="tab-pane">
+                                    <div class="panel-body">
+
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered table-stripped">
+                                                <thead>
+                                                <tr>
+                                                    <th class="id">
+                                                        id
+                                                    </th>
+                                                    <th>
+                                                        缩略图
+                                                    </th>
+                                                    <th>
+                                                        排列序号
+                                                    </th>
+                                                    <th>
+                                                        操作
+                                                    </th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="love_kitchen_edit_tbody"> 
+                                                </tbody>
+                                            </table>
+                                            <button >新增</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <button class="buttonsave">保存</button>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--加载页脚-->
+        <div class="footer" id="love_kichen_footer">            
+        </div>
+
+    </div>
+</div>
+
+
+
+<!-- Mainly scripts -->
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="common_html/love_kitchen_bar.js"></script>
+<!-- Custom and plugin javascript -->
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
+
+<!-- SUMMERNOTE -->
+<script src="js/plugins/summernote/summernote.min.js"></script>
+
+<!-- Data picker -->
+<script src="js/plugins/datapicker/bootstrap-datepicker.js"></script>
+<script src="src/js/love_kitchen/love_kitchen_edit.js"></script>
+
+<script>
+    
+</script>
+
+</body>
+
+</html>
+

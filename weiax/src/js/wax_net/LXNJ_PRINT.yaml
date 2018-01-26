@@ -1,0 +1,206 @@
+redisJson:
+  otherconfig: null
+  tableconfig:
+  - {insuranceCode: LXNJ_PRINT, valuePrecision: '0', dbCondition: 'sex=$sex$ and payYear=$payYear$
+      and age=$age$ &sex=$sex$ ', redisValueType: 1&1, redisKey: PB_LXNJ_MEASURE_MAIN_$sex$_$payYear$_$age$&PB_LXNJ_MEASURE_COST_$sex$,
+    value: 'ageYear             redisKey,concat(profitL,''#'',profitM,''#'',profitH,''#'',lifeInsure,''#'',deadInsure,''#'',cash            )
+      redisValue&ageYear         redisKey,concat(cost                       ) redisValue',
+    tableName: pb_lxnj_measure_main&pb_lxnj_measure_cost}
+  paramconfig:
+  - {paramType: '0', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 年龄,
+    formula: '', description: '', paramName: age, sort: '1'}
+  - {paramType: '0', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 性别,
+    formula: '{0,1}', description: '', paramName: sex, sort: '2'}
+  - {paramType: '0', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 领取,
+    formula: '', description: '', paramName: draw, sort: '3'}
+  - {paramType: '0', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 追加,
+    formula: '', description: '', paramName: append, sort: '4'}
+  - {paramType: '0', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 趸交,
+    formula: '', description: '', paramName: onePay, sort: '5'}
+  - {paramType: '0', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 交费期间,
+    formula: '', description: '', paramName: payYear, sort: '6'}
+  - {paramType: '0', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 保费,
+    formula: '', description: '', paramName: premium, sort: '7'}
+  - {paramType: '0', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 主险数据,
+    formula: '', description: '', paramName: measureresultmain, sort: '7'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 主险数据,
+    formula: '{$measureresultmain$}', description: '', paramName: measureresultmain,
+    sort: '7'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '2', loadClass: '', define: '',
+    formula: '{$draw$}', description: '', paramName: drawTmp, sort: '8'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '2', loadClass: '', define: '',
+    formula: '{$append$}', description: '', paramName: appendTmp, sort: '10'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: '',
+    formula: '0', description: '', paramName: tmpCoverage, sort: '12'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '2', loadClass: '', define: 阿尔法,
+    formula: '{1~18:0,19~41:0.6,42~61:0.4,62~106:0.2}', description: '', paramName: arf,
+    sort: '13'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '2', loadClass: '', define: 贝塔,
+    formula: '{0~18:1,19~41:1.6,42~61:1.4,62~106:1.2}', description: '', paramName: bt,
+    sort: '14'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '2', loadClass: '', define: 伽玛,
+    formula: '{0.05,0.04,0.03,0.02,0.01}', description: '', paramName: gm, sort: '15'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '2', loadClass: '', define: 万能利率,
+    formula: '{0.025,0.045,0.06}', description: '', paramName: wn, sort: '16'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '1', loadClass: '', define: 数组：红利,
+    formula: '[(0),(2)]', description: '', paramName: fit, sort: '17'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 计数器,
+    formula: '0', description: '', paramName: count, sort: '19'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 累计生存金,
+    formula: '0', description: '', paramName: totalLifeInsure, sort: '20'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 万能账户价值低,
+    formula: '0', description: '', paramName: accountWorthL, sort: '21'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 万能账户价值中,
+    formula: '0', description: '', paramName: accountWorthM, sort: '21'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 万能账户价值高,
+    formula: '0', description: '', paramName: accountWorthH, sort: '21'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 为负标记低,
+    formula: '0', description: '', paramName: negativeFlagL, sort: '22'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 为负标记中,
+    formula: '0', description: '', paramName: negativeFlagM, sort: '22'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 为负标记高,
+    formula: '0', description: '', paramName: negativeFlagH, sort: '22'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 累计保险费,
+    formula: '0', description: '', paramName: sumPremium, sort: '23'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '1', loadClass: '', define: 数组：年末年龄,
+    formula: '[($age$+1),(105)]', description: '', paramName: ageYear, sort: '24'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '2', loadClass: '', define: '',
+    formula: '@pb_lxnj_measure_main.get$ageYear$@', description: '', paramName: mainData,
+    sort: '25'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '2', loadClass: '', define: '',
+    formula: '@pb_lxnj_measure_main.get$ageYear$－1@', description: '', paramName: mainDataDelOne,
+    sort: '26'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '2', loadClass: '', define: '',
+    formula: '@pb_lxnj_measure_main.get$ageYear$－6@', description: '', paramName: mainDataDelSix,
+    sort: '27'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 保单年度,
+    formula: $count$+1, description: '', paramName: riskAnnual, sort: '28'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 年末年龄,
+    formula: $ageYear$, description: '', paramName: endAge, sort: '29'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 年金合同保险费,
+    formula: '$count$<$payYear$?$premium$:0', description: '', paramName: rentePremium,
+    sort: '30'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 生存金,
+    formula: '@mainData.get3@*$premium$/1000', description: '', paramName: annualInsure,
+    sort: '31'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 红利低,
+    formula: '@mainData.get0@*$premium$/1000', description: '', paramName: profitL,
+    sort: '32'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 红利中,
+    formula: '@mainData.get1@*$premium$/1000', description: '', paramName: profitM,
+    sort: '33'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 红利高,
+    formula: '@mainData.get2@*$premium$/1000', description: '', paramName: profitH,
+    sort: '34'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 当前红利,
+    formula: '@mainData.get$fit$@*$premium$/1000', description: '', paramName: nowProfit,
+    sort: '35'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: '',
+    formula: '@pb_lxnj_measure_cost.get$ageYear$－1@', description: '', paramName: cost,
+    sort: '36'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 趸交,
+    formula: '$count$==0?$onePay$:0', description: '', paramName: almightyOnePremium,
+    sort: '37'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 追加保险费,
+    formula: '@appendTmp.get$ageYear$@', description: '', paramName: almightyAppendPremium,
+    sort: '38'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 领取保险费,
+    formula: '@drawTmp.get$ageYear$@', description: '', paramName: almightyDrawPremium,
+    sort: '39'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 转入保险费,
+    formula: '@mainDataDelOne.get3@*$premium$/1000+@mainDataDelOne.get$fit$@*$premium$/1000',
+    description: '', paramName: intoInsure, sort: '40'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 计算：累计保险费,
+    formula: $sumPremium$+$rentePremium$+$almightyOnePremium$+$almightyAppendPremium$,
+    description: '', paramName: sumPremium, sort: '41'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 计算：初始费用,
+    formula: $intoInsure$*0.01+$almightyOnePremium$*0.03+$almightyAppendPremium$*0.03,
+    description: '', paramName: initFee, sort: '42'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 计算：持续奖金,
+    formula: '$count$<6?0:(@mainDataDelSix.get3@+@mainDataDelSix.get$fit$@)*$premium$/1000*0.01',
+    description: '', paramName: continueReward, sort: '43'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 计算：转入万能账户老,
+    formula: $intoInsure$+$almightyOnePremium$+$almightyAppendPremium$－$initFee$+$continueReward$,
+    description: '', paramName: intoAccount, sort: '44'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 计算：转入万能账户新,
+    formula: $nowProfit$+$annualInsure$, description: '', paramName: intoAccountNew,
+    sort: '44'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 计算：基本保额低,
+    formula: ($accountWorthL$+$intoAccount$)*@arf.get$ageYear$@, description: '',
+    paramName: mustCoverageL, sort: '45'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 计算：基本保额中,
+    formula: ($accountWorthM$+$intoAccount$)*@arf.get$ageYear$@, description: '',
+    paramName: mustCoverageM, sort: '45'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 计算：基本保额高,
+    formula: ($accountWorthH$+$intoAccount$)*@arf.get$ageYear$@, description: '',
+    paramName: mustCoverageH, sort: '45'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 计算：保障成本低,
+    formula: '$ageYear$>75?0:$mustCoverageL$*$cost$', description: '', paramName: safeCostL,
+    sort: '46'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 计算：保障成本中,
+    formula: '$ageYear$>75?0:$mustCoverageM$*$cost$', description: '', paramName: safeCostM,
+    sort: '46'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 计算：保障成本高,
+    formula: '$ageYear$>75?0:$mustCoverageH$*$cost$', description: '', paramName: safeCostH,
+    sort: '46'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 计算：万能账户价值低,
+    formula: ($accountWorthL$+$intoAccount$－$safeCostL$)*(1+@wn.get0@)－$almightyDrawPremium$,
+    description: '', paramName: accountWorthL, sort: '47'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 计算：万能账户价值中,
+    formula: ($accountWorthM$+$intoAccount$－$safeCostM$)*(1+@wn.get1@)－$almightyDrawPremium$,
+    description: '', paramName: accountWorthM, sort: '47'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 计算：万能账户价值高,
+    formula: ($accountWorthH$+$intoAccount$－$safeCostH$)*(1+@wn.get2@)－$almightyDrawPremium$,
+    description: '', paramName: accountWorthH, sort: '47'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 计算：为负标记低,
+    formula: '$accountWorthL$<0?1:0', description: '', paramName: negativeFlagL, sort: '48'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 计算：为负标记中,
+    formula: '$accountWorthM$<0?1:0', description: '', paramName: negativeFlagM, sort: '48'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 计算：为负标记高,
+    formula: '$accountWorthH$<0?1:0', description: '', paramName: negativeFlagH, sort: '48'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 输出：万能账户价值低,
+    formula: '$negativeFlagL$==1?0:$accountWorthL$', description: '', paramName: accountWorthL,
+    sort: '49'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 输出：万能账户价值中,
+    formula: '$negativeFlagM$==1?0:$accountWorthM$', description: '', paramName: accountWorthM,
+    sort: '49'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 输出：万能账户价值高,
+    formula: '$negativeFlagH$==1?0:$accountWorthH$', description: '', paramName: accountWorthH,
+    sort: '49'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 计算：年度末身故保险金低,
+    formula: '$negativeFlagL$==1?0:$accountWorthL$*@bt.get$ageYear$@', description: '',
+    paramName: annualDeadL, sort: '50'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 计算：年度末身故保险金中,
+    formula: '$negativeFlagM$==1?0:$accountWorthM$*@bt.get$ageYear$@', description: '',
+    paramName: annualDeadM, sort: '50'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 计算：年度末身故保险金高,
+    formula: '$negativeFlagH$==1?0:$accountWorthH$*@bt.get$ageYear$@', description: '',
+    paramName: annualDeadH, sort: '50'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 计算：年度末现金价值低,
+    formula: '$negativeFlagL$==1?0:$accountWorthL$*(1－@gm.get$count$@)', description: '',
+    paramName: annualCashL, sort: '51'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 计算：年度末现金价值中,
+    formula: '$negativeFlagM$==1?0:$accountWorthM$*(1－@gm.get$count$@)', description: '',
+    paramName: annualCashM, sort: '51'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 计算：年度末现金价值高,
+    formula: '$negativeFlagH$==1?0:$accountWorthH$*(1－@gm.get$count$@)', description: '',
+    paramName: annualCashH, sort: '51'}
+  - {paramType: '3', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 输出：累计生存金,
+    formula: $totalLifeInsure$+$annualInsure$, description: '', paramName: totalLifeInsure,
+    sort: '52'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 输出：年金合同身故保险金给付金额,
+    formula: '@mainData.get4@*$premium$/1000', description: '', paramName: endYearDeadPay,
+    sort: '52'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 输出：年金合同年度末现金价值,
+    formula: '@mainData.get5@*$premium$/1000', description: '', paramName: endYearCash,
+    sort: '53'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 输出：生存总利益,
+    formula: $annualCashM$+$endYearCash$+$annualInsure$, description: '', paramName: allLifeInsureM,
+    sort: '53'}
+  - {paramType: '1', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: 输出：身故总利益,
+    formula: $endYearDeadPay$+$annualDeadM$, description: '', paramName: allDeadInsureM,
+    sort: '54'}
+  - {paramType: '4', insuranceCode: LXNJ_PRINT, dataType: '0', loadClass: '', define: '',
+    formula: $count$+1, description: '', paramName: count, sort: '55'}
+mongoJson: {configName: 乐鑫年金_打印, createTime: '20171227101113', configId: LXNJ_PRINT,
+  configCode: null, channel: 经代, configType: 计划书}
